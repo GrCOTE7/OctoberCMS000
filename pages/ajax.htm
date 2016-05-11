@@ -1,0 +1,77 @@
+title = "Ajax"
+url = "/ajax"
+layout = "basic"
+description = "2 exemples utilisant Ajax"
+is_hidden = 0
+meta_title = "Titre Ajax"
+meta_description = "Ajax Test"
+
+[demoTodo]
+max = 3
+==
+<?php
+function onTest()
+{
+    $value1 = post('value1');
+    $value2 = post('value2');
+    $operation = post('operation');
+
+    switch ($operation) {
+        case '+' :
+            $this['result'] = $value1 + $value2;
+            break;
+        case '-' :
+            $this['result'] = $value1 - $value2;
+            break;
+        case '*' :
+            $this['result'] = $value1 * $value2;
+            break;
+        default :
+            $this['result'] = $value1 / $value2;
+            break;
+    }
+}
+?>
+==
+<div class="container">
+    <div class="row">
+        <div>
+            <h1>Calcul</h1>
+            <p>Usage Ajax</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Calculator</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-inline" data-request="onTest" data-request-update="calcresult: '#resultcalc'">
+                <input type="text" class="form-control" value="15" name="value1" style="width:100px">
+                <select class="form-control" name="operation" style="width: 70px">
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                </select>
+                <input type="text" class="form-control" value="5" name="value2" style="width:100px">
+                <button type="submit" class="btn btn btn-primary">Calculate</button>
+            </form>
+        </div>
+        <div class="panel-footer" id="resultcalc">
+            {% partial "calcresult" %}
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    {% component 'demoTodo' %}
+</div>
+
+<div class="container">
+    <!--<p>1 ligne de code HTMl !</p>-->
+</div>
