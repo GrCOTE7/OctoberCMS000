@@ -1,9 +1,9 @@
 description = "Affichage du résultat"
 ==
 {% if result %}
-    <span class="lead">
-        The result is <span class="label label-success">{{ result }}</span>
-    </span>
+<div class="lead">
+    {{ value1 }} {{ operation }} {{ value2}} = <span class="label label-success">{{ result }}</span>
+</div>
 {% else %}
     <span class="text-muted">
         Click the <em>Calculate</em> button to find the answer.

@@ -1,0 +1,21 @@
+title = "Form"
+url = "/form"
+layout = "basic"
+description = "Exemple de formulaire avec retour de valeur"
+is_hidden = 0
+==
+<?php
+function onHandleForm()
+{
+    $this['lastValue'] = ucfirst(post('value'));
+}
+?>
+==
+<div class="container jumbotron padding20">
+    <p>The title of this page is: <strong>{{ this.page.title }}</strong></p>
+    {{ form_open({ request: 'onHandleForm' }) }}
+    Please enter a string: <input type="text" name="value"/>
+    <input type="submit" value="Submit me!"/>
+    {{ form_close() }}
+    <p>Last submitted value: <strong>{{ lastValue }}</strong></p>
+</div>

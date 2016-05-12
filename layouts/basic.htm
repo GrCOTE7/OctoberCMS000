@@ -1,6 +1,5 @@
 description = "A basic layout"
 ==
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -36,12 +35,19 @@ description = "A basic layout"
                     <div class="collapse navbar-collapse navbar-main-collapse">
                         <ul class="nav navbar-nav">
                             <li class="{% if this.page.id == 'accueil' %}active{% endif %}"><a href="{{ 'accueil'|page
-                                }}">Base
-                                000</a></li>
-                            <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">Ajax</a>
-                            <li class="{% if this.page.id == 'google' %}active{% endif %}"><a target="_blank"
-                                                                                              href="{{ 'google'|page }}">Google</a>
+                                }}">Base 000</a>
                             </li>
+                            <li class="{% if this.page.id == 'ajax' %}active{% endif %}">
+                                <a href="{{ 'ajax'|page }}">Ajax</a>
+                            </li>
+                            <li class="{% if this.page.id == 'ajaxjs' %}active{% endif %}">
+                                <a href="{{ 'ajaxjs'|page }}">AjaxJS</a>
+                            </li>
+                            <li class="{% if this.page.id == 'form' %}active{% endif %}">
+                                <a href="{{ 'form'|page }}">Form</a>
+                            </li>
+                            <li class="{% if this.page.id == 'google' %}active{% endif %}">
+                                <a target="_blank" href="{{ 'google'|page }}">Google</a>
                             </li>
                         </ul>
                     </div>

@@ -1,16 +1,14 @@
-title = "Ajax"
-url = "/ajax"
+title = "AjaxJS"
+url = "/ajaxjs"
 layout = "basic"
-description = "2 exemples utilisant Ajax"
+description = "Ajax avec JS API"
 is_hidden = 0
-meta_title = "Titre Ajax"
-meta_description = "Ajax Test"
+meta_title = "Titre AjaxJS"
+meta_description = "Ajax Test2"
 
-[demoTodo]
-max = 3
 ==
 <?php
-function onTest()
+function onTest2()
 {
     $value1 = $this['value1'] = post('value1');
     $value2 = $this['value2'] = post('value2');
@@ -53,7 +51,7 @@ function onTest()
         <!--data-request-success="alert('Yay!')"-->
         <div class="panel-body">
             <form class="form-inline"
-                  data-request="onTest"
+                  data-request="onTest2"
                   data-request-update="calcresult: '@#resultcalc', commentresult: '#commentresult'">
                 <input type="text" class="form-control" value="1500" name="value1" style="width:100px">
                 <select class="form-control" name="operation" style="width: 70px">
@@ -74,10 +72,6 @@ function onTest()
         </div>
     </div>
 
-</div>
-
-<div class="container">
-    {% component 'demoTodo' %}
 </div>
 
 <div class="container">
