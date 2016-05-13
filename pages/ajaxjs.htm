@@ -5,30 +5,15 @@ description = "Ajax avec JS API"
 is_hidden = 0
 meta_title = "Titre AjaxJS"
 meta_description = "Ajax Test2"
-
 ==
 <?php
-function onTest2()
+function onHandleForm()
 {
-    $value1 = $this['value1'] = post('value1');
-    $value2 = $this['value2'] = post('value2');
-    $operation = $this['operation'] =  post('operation');
-
-    switch ($operation) {
-        case '+' :
-            $result = $value1 + $value2;
-            break;
-        case '-' :
-            $result = $value1 - $value2;
-            break;
-        case 'x' :
-            $result = $value1 * $value2;
-            break;
-        default :
-            $result = $value1 / $value2;
-            break;
-    }
-    $this['result'] = number_format($result,0,',',' ');
+    /* Something server-side code */
+    return [
+        'totalUsers' => 1000,
+'totalProjects' => 937
+];
 }
 ?>
 ==
@@ -45,22 +30,19 @@ function onTest2()
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Calculator</h3>
+            <h3 class="panel-title">Simple Ajax</h3>
         </div>
         <!--data-request-confirm="Sûr ?"-->
         <!--data-request-success="alert('Yay!')"-->
         <div class="panel-body">
-            <form class="form-inline"
-                  data-request="onTest2"
-                  data-request-update="calcresult: '@#resultcalc', commentresult: '#commentresult'">
-                <input type="text" class="form-control" value="1500" name="value1" style="width:100px">
-                <select class="form-control" name="operation" style="width: 70px">
-                    <option>+</option>
-                    <option>-</option>
-                    <option selected>x</option>
-                    <option>/</option>
-                </select>
-                <input type="text" class="form-control" value="500" name="value2" style="width:100px">
+            <form
+                    onsubmit="$(this).request('onHandleForm', {
+        success: function(data) {
+        $.oc.stripeLoadIndicator.show(event)
+            console.log(data);
+            $('#commentresult').html('Oki après Ajax');
+        }
+    }); return false;">
                 <button type="submit" class="btn btn btn-primary">Calculate</button>
             </form>
         </div>
@@ -68,7 +50,7 @@ function onTest2()
             {% partial "calcresult" %}
         </div>
         <div id="commentresult">
-            {% partial "commentresult" %}
+            <!--{% partial "commentresult" %}-->
         </div>
     </div>
 
@@ -77,3 +59,18 @@ function onTest2()
 <div class="container">
     <!--<p>1 ligne de code HTMl !</p>-->
 </div>
+<!--<script src="http://pp100/000/combine/da5a7963913a1b4c2c30a952ad64d160-1463001860"></script>-->
+{% put scripts %}
+<script>
+    $(document).ready(function () {
+        $('#commentresult').html('Oki \'posé\' par JS');
+        console.log('Oki: ' + '2 + 3 = ' + (2 + 3));
+
+        //    alert('Oki');
+        $().on('ajaxUpdate', function () {
+            console.log('Updated!');
+
+        })
+    });
+</script>
+{% endput %}
