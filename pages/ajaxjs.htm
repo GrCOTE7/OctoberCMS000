@@ -36,7 +36,8 @@ function onHandleForm()
         <!--data-request-success="alert('Yay!')"-->
         <div class="panel-body">
             <form
-                    onsubmit="$.oc.stripeLoadIndicator.show(event); $(this).request('onHandleForm', {
+                    onsubmit="$.oc.stripeLoadIndicator.show(event);
+                    $(this).request('onHandleForm', {
                     success: function(data) {
                              console.log(data);
                              $('#commentresult').html('Oki après Ajax');
