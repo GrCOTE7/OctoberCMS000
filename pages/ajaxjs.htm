@@ -20,8 +20,8 @@ function onHandleForm()
 <div class="container">
     <div class="row">
         <div>
-            <h1>Calcul</h1>
-            <p>Usage Ajax</p>
+            <h1>Ajax JS API</h1>
+            <p>Usage Ajax avec Javascript API (Plus puissant)</p>
         </div>
     </div>
 </div>
@@ -36,20 +36,20 @@ function onHandleForm()
         <!--data-request-success="alert('Yay!')"-->
         <div class="panel-body">
             <form
-                    onsubmit="$(this).request('onHandleForm', {
-        success: function(data) {
-        $.oc.stripeLoadIndicator.show(event)
-            console.log(data);
-            $('#commentresult').html('Oki après Ajax');
-        }
+                    onsubmit="$.oc.stripeLoadIndicator.show(event); $(this).request('onHandleForm', {
+                    success: function(data) {
+                             console.log(data);
+                             $('#commentresult').html('Oki après Ajax');
+                             $.oc.stripeLoadIndicator.hide();
+                    }
     }); return false;">
-                <button type="submit" class="btn btn btn-primary">Calculate</button>
+                <button type="submit" class="btn btn btn-primary">Action !</button>
             </form>
         </div>
         <div class="panel-footer" id="resultcalc">
-            {% partial "calcresult" %}
+            Clic the Action button...
         </div>
-        <div id="commentresult">
+        <div class="panel-footer" id="commentresult">
             <!--{% partial "commentresult" %}-->
         </div>
     </div>
