@@ -15,6 +15,7 @@ description = "A basic layout"
 <link href="{{ [
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
+        {% placeholder head %}
     </head>
     <body>
 
@@ -43,6 +44,9 @@ description = "A basic layout"
                             </li>
                             <li class="{% if this.page.id == 'ajaxjs' %}active{% endif %}">
                                 <a href="{{ 'ajaxjs'|page }}">AjaxJS</a>
+                            </li>
+                            <li class="{% if this.page.id == 'vuejs' %}active{% endif %}">
+                                <a href="{{ 'tools/vuejs-commits'|page }}">Vue.JS</a>
                             </li>
                             <li class="{% if this.page.id == 'form' %}active{% endif %}">
                                 <a href="{{ 'form'|page }}">Form</a>

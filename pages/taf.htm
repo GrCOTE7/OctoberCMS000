@@ -1,4 +1,4 @@
-title = "Accueil"
+title = "TÀF"
 url = "/taf"
 layout = "basic"
 is_hidden = 0
@@ -7,16 +7,48 @@ is_hidden = 0
 max = 3
 ==
 <div class="container">
+    <h3>{{demoTodo.name}}</h3>
+
+    <h1>
+
+
+        {{ this.property('max') }}
+
+
+    </h1>
+
+    <p>
+        Ici: {{demoTodo.nfLi(54789)}}
+    </p>
+
+    <p>{% for caractere, properties in demoTodo.getPropertyNames %}
+
+    <h2>Caractéristiques de <b>{{caractere}}</b>:</h2>
+    {% for key, property in properties %}
+    <li class="list-group-item">
+        {{key|capitalize}} : <b>{{ property }}</b>
+    </li>
+    {% endfor %}
+    {% endfor %}
+    </p>
+
+    <p>
+        La valeur par defaut est {{demoTodo.defineProperties.max.default}}<br/>
+        La valeur paramétrée est <b>{{demoTodo.methodeLionel()}}</b>
+    </p>
+    {{dump(this.param)}}
+    <br/>
+
+    {% component 'demoTodo' %}
+</div>
+
+<div class="container">
     <div class="row">
         <div>
             <h1>TAF (Usage plugins)</h1>
             <p>Plugin 'demoTodo'</p>
         </div>
     </div>
-</div>
-
-<div class="container">
-    {% component 'demoTodo' %}
 </div>
 
 <div class="container">
