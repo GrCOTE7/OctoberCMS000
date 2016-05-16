@@ -17,10 +17,7 @@ max = 3
 
     </h1>
 
-    <p>
-        Ici: {{demoTodo.nfLi(54789)}}
-    </p>
-
+    {#<p>Ici: {{demoTodo.nfLi(54789)}}</p>
     <p>{% for caractere, properties in demoTodo.getPropertyNames %}
 
     <h2>Caractéristiques de <b>{{caractere}}</b>:</h2>
@@ -34,8 +31,10 @@ max = 3
 
     <p>
         La valeur par defaut est {{demoTodo.defineProperties.max.default}}<br/>
-        La valeur paramétrée est <b>{{demoTodo.methodeLionel()}}</b>
+        <!-- La valeur paramétrée est <b>{{demoTodo.methodeLionel()}}</b> -->
     </p>
+
+    #}
     {{dump(this.param)}}
     <br/>
 
@@ -54,3 +53,24 @@ max = 3
 <div class="container">
     <p>1 ligne de code HTMl !</p>
 </div>
+
+{#
+
+Dans le plugin (demo/component/Todo.ph) :ng-include src="ng-include src="
+    /**
+     * @return array
+     */
+    public function getPropertyNames() {
+        return $this->defineProperties();
+    }
+
+
+    function methodeLionel() {
+        return ($this->property('max'));
+    }
+
+    function nfLi($value) {
+        return number_format($value, 2, ',', ' ');
+    }
+
+#}
