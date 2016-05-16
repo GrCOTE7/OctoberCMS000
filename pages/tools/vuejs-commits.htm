@@ -24,6 +24,10 @@ is_hidden = 0
     .author, .date {
         font-weight: bold;
     }
+
+    .spaceli {
+        margin-right: 20px;  
+    }
 </style>
 
 <script src="{{ [ 'assets/gc7/js/vue.js' ]|theme }}"></script>
@@ -33,24 +37,28 @@ is_hidden = 0
 
 <div class="container" id="demo">
     <h1>Latest Vue.js Commits</h1>
-    <template v-for="branch in branches">
+
+    <label v-for="branch in branches" class="spaceli">
+        
         <input type="radio"
                name="branch"
                :id="branch"
                :value="branch"
-               v-model="currentBranch">
+               v-model="currentBranch"> 
+
         <label :for="branch">
-            {% verbatim %}{{branch}}{% endverbatim %}
+             {% verbatim %} {{branch}} {% endverbatim %} 
         </label>
-    </template>
+        
+    </label>
     <p>vuejs/vue@{% verbatim %}{{currentBranch}}{% endverbatim %}</p>
     <ul>
         <li v-for="record in commits">
             <a :href="record.html_url" target="_blank" class="commit">{% verbatim %}{{record.sha.slice(0, 7)}}{%
                 endverbatim %}</a>
-            - <span class="message">{% verbatim %}{{record.commit.message}}{% endverbatim %}</span><br>
+            - <span class="message">{% verbatim %}{{record.commit.message|truncate}}{% endverbatim %}</span><br>
             by <span class="author">{% verbatim %}{{record.commit.author.name}}{% endverbatim %}</span>
-            at <span class="date">{% verbatim %}{{record.commit.author.date}}{% endverbatim %}</span>
+            at <span class="date">{% verbatim %}{{record.commit.author.date|formatDate}}{% endverbatim %}</span>
         </li>
     </ul>
 </div>
@@ -63,7 +71,7 @@ is_hidden = 0
         /**
          * Created by cote on 15/05/2016.
          */
-        var apiURL = 'https://api.github.com/repos/GrCOTE7/OctoberCMS000/commits?per_page=3&sha='
+        var apiURL = 'https://api.github.com/repos/GrCOTE7/OctoberCMS000/commits?per_page=7&sha='
 //var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
         var isPhantom = navigator.userAgent.indexOf('PhantomJS') > -1
 
