@@ -3,6 +3,13 @@ url = "/"
 layout = "basic"
 is_hidden = 0
 ==
+<?php
+
+function onStart(){
+    $this['maVar']=777;
+}
+?>
+==
 <div class="container">
     <div class="row">
         <div>
@@ -11,4 +18,13 @@ is_hidden = 0
             <a href="taf">TAF (Plugin demoTodo)</a>
         </div>
     </div>
+    <hr/>
+    <div class="con">
+        <div class="row">
+            maVar = {{ maVar }}<br/>
+
+
+        </div>
+    </div>
 </div>
+{#  <!--$this['theme_name'] = Config::get("cms.activeTheme",'');--> #}
