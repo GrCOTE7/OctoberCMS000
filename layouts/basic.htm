@@ -38,6 +38,9 @@ description = "A basic layout"
                             <li class="{% if this.page.id == 'accueil' %}active{% endif %}"><a href="{{ 'accueil'|page
                                 }}">{{ this.theme.getConfigValue('name')|capitalize }}</a>
                             </li>
+                            {% verbatim %}<li>
+                                <a target="_blank" href="themes/gc000/a" title="Page pour tests rapides">A</a>
+                            </li>{% endverbatim %}
                             <li class="{% if this.page.id == 'ajax' %}active{% endif %}">
                                 <a href="{{ 'ajax'|page }}">Ajax</a>
                             </li>
