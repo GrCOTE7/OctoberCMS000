@@ -6,7 +6,9 @@ is_hidden = 0
 <?php
 
 function onStart(){
-    $this['maVar']=777;
+
+    $this['maVar'] = 777;
+
 }
 ?>
 ==
@@ -26,4 +28,7 @@ function onStart(){
         </div>
     </div>
 </div>
+{% stopwatch "foo" %}
+{{ debug('maVar = ' ~ maVar) }}
+{% endstopwatch %}
 {#  <!--$this['theme_name'] = Config::get("cms.activeTheme",'');--> #}

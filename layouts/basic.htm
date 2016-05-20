@@ -1,10 +1,27 @@
 description = "A basic layout"
 ==
+<?php
+function onStart(){
+    $this['snl'] = $_SERVER['HTTP_HOST'];
+    $gc7 = Debugbar::addCollector(new DebugBar\DataCollector\MessagesCollector('gc7'));
+    $gc7['gc7']->info ( 'Server Name: ' . $this['snl'] );
+}
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Bases 000 | {{ this.page.title }}</title>
+        <title>
+            {% if snl == 'pp100' %}
+                Local
+            {% else %}
+                Bases
+            {% endif %}
+                000 | {{ this.page.title }}
+
+        </title>
+
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="LC">
@@ -79,8 +96,8 @@ description = "A basic layout"
                             <li class="{% if this.page.id == 'google' %}active{% endif %}">
                                 <a target="_blank" href="{{ 'google'|page }}">Google</a>
                             </li>
-                            <li class="{% if this.page.id == 'zic' %}active{% endif %}">
-                                <a href="{{ 'divers/zic'|page }}">Zic</a>
+                            <li class="{% if this.page.id == 'videoss' %}active{% endif %}">
+                                <a href="{{ 'divers/videos'|page }}">Vidéos</a>
                             </li>
                         </ul>
                         </ul>
@@ -119,6 +136,5 @@ description = "A basic layout"
         ]|theme }}"></script>
         {% framework extras %}
         {% scripts %}
-
     </body>
 </html>

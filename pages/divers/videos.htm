@@ -1,10 +1,8 @@
-title = "Zic"
-url = "/divers/zic"
+title = "Vidéos"
+url = "/divers/videos"
 layout = "basic"
-description = "Nos Zics @ Nous"
+description = "Chaîne YouTube"
 is_hidden = 0
-;meta_title = "Jtm"
-;meta_description = "Nos Zics @ Nous, Doro"
 
 [latestVideos]
 channel_id = "UC7GG1khckOWRMuhVqXDadgQ"
@@ -18,13 +16,15 @@ function onStart(){
 ?>
 ==
 {#{{ debug(latestVideos) }}#}
-<br/>&nbsp;
-<div class="container">
+{#<br/>&nbsp;#}
+<div class="container" style="text-align: center">
+    <h1>Vidéos issues de la <a target="_blank" title=" Voir la caine YouTube... "
+                               href="https://www.youtube.com/user/Lcote7/videos?shelf_id=0&view=0&sort=dd">chaîne
+            YouTube</a></h1>
     {% component 'latestVideos' %}
-    {#{% partial 'latestVideos/default' %}#}
 </div>
 
-    {#{{ debug(maVar, var1, var2) }}#}
+{#{{ debug(maVar, var1, var2) }}#}
 
 {#
 Explication de JS pour contrôler vidéos Youtube

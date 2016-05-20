@@ -1,15 +1,8 @@
-title = "Zic"
-url = "/divers/zic"
+title = "Doro"
+url = "/divers/zics-doro"
 layout = "basic"
 description = "Nos Zics @ Nous"
 is_hidden = 0
-;meta_title = "Jtm"
-;meta_description = "Nos Zics @ Nous, Doro"
-
-[latestVideos]
-channel_id = "UC7GG1khckOWRMuhVqXDadgQ"
-max_items = 12
-thumb_resolution = "medium"
 ==
 <?php
 function onStart(){
@@ -20,11 +13,11 @@ function onStart(){
 {#{{ debug(latestVideos) }}#}
 <br/>&nbsp;
 <div class="container">
-    {% component 'latestVideos' %}
+
     {#{% partial 'latestVideos/default' %}#}
 </div>
 
-    {#{{ debug(maVar, var1, var2) }}#}
+{#{{ debug(maVar, var1, var2) }}#}
 
 {#
 Explication de JS pour contrôler vidéos Youtube
@@ -32,3 +25,8 @@ Explication de JS pour contrôler vidéos Youtube
         src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
         frameborder="0"/>
 #}
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/SG--ZWloQY8" frameborder="0"
+        allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/287Ep1n-8YU" frameborder="0"
+        allowfullscreen></iframe>
