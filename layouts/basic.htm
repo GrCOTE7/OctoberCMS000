@@ -16,6 +16,29 @@ description = "A basic layout"
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
         {% placeholder head %}
+
+        <!-- Piwik -->
+        <script type="text/javascript">
+            var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function () {
+                var u = "//piwik.c57.fr/";
+                _paq.push(['setTrackerUrl', u + 'piwik.php']);
+                _paq.push(['setSiteId', 8]);
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                g.type = 'text/javascript';
+                g.async = true;
+                g.defer = true;
+                g.src = u + 'piwik.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript><p><img src="//piwik.c57.fr/piwik.php?idsite=8" style="border:0;" alt=""/></p></noscript>
+        <!-- End Piwik Code -->
+
+        </scrip>
+
     </head>
     <body>
         <!-- Header -->
@@ -39,7 +62,7 @@ description = "A basic layout"
                                 }}">{{ this.theme.getConfigValue('name')|capitalize }}</a>
                             </li>
                             {% verbatim %}<li>
-                                <a target="_blank" href="themes/gc000/a" title="Page pour tests rapides">A</a>
+                                <a target="_blank" href="/themes/gc000/a" title="Page pour tests rapides">A</a>
                             </li>{% endverbatim %}
                             <li class="{% if this.page.id == 'ajax' %}active{% endif %}">
                                 <a href="{{ 'ajax'|page }}">Ajax</a>
@@ -56,6 +79,10 @@ description = "A basic layout"
                             <li class="{% if this.page.id == 'google' %}active{% endif %}">
                                 <a target="_blank" href="{{ 'google'|page }}">Google</a>
                             </li>
+                            <li class="{% if this.page.id == 'zic' %}active{% endif %}">
+                                <a href="{{ 'divers/zic'|page }}">Zic</a>
+                            </li>
+                        </ul>
                         </ul>
                     </div>
                 </div>
@@ -92,24 +119,6 @@ description = "A basic layout"
         ]|theme }}"></script>
         {% framework extras %}
         {% scripts %}
-
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//piwik.c57.fr/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 8]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//piwik.c57.fr/piwik.php?idsite=8" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
-        </scrip>
 
     </body>
 </html>

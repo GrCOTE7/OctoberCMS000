@@ -40,7 +40,7 @@ function onHandleForm()
                     $(this).request('onHandleForm', {
                     success: function(data) {
                              console.log(data);
-                             $('#commentresult').html('Oki après Ajax');
+                             $('#commentresult').html('Oki après Ajax (JQ)');
                              $.oc.stripeLoadIndicator.hide();
                     }
     }); return false;">
@@ -64,7 +64,7 @@ function onHandleForm()
 {% put scripts %}
 <script>
     $(document).ready(function () {
-        $('#commentresult').html('Oki \'posé\' par JS');
+        $('#commentresult').html('Oki \'posé\' par JQ');
         console.log('Oki: ' + '2 + 3 = ' + (2 + 3));
 
         //    alert('Oki');

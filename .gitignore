@@ -78,3 +78,5 @@ storage/
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+/themes/gc000/a/tsconfig.json

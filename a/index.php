@@ -34,3 +34,5 @@ echo "\n\n" . '<pre>' . "\n";
 //echo $v . '<hr>';
 var_dump($n);
 echo '</pre>';
+
+echo '<hr><a href="http://pp100/000/themes/gc000/a/tsconfig.json">YouTube Key</a>';
