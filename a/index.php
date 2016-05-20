@@ -1,3 +1,8 @@
+<head>
+  <title>A</title>
+</head>
+
+
 <?php
 
 /**
@@ -35,4 +40,6 @@ echo "\n\n" . '<pre>' . "\n";
 var_dump($n);
 echo '</pre>';
 
-echo '<hr><a href="http://pp100/000/themes/gc000/a/tsconfig.json">YouTube Key</a>';
+//echo '<hr><a href="/themes/gc000/a/tsconfig.json">YouTube Key</a>';
+
+//phpinfo(INFO_ENVIRONMENT | INFO_VARIABLES);
