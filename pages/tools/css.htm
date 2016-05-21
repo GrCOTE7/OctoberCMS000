@@ -1,0 +1,55 @@
+title = "CSS"
+url = "/tools/css"
+layout = "basic"
+description = "Tests CSS"
+is_hidden = 0
+==
+<style>
+    body {
+        background-color: cornsilk;
+    }
+
+    main {
+        border: px solid blue;
+        font-size: 20px;
+        font-family: "Trebuchet MS";
+        padding: 10px 30px;
+        margin: 0;
+        background-color: yellow;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+    }
+
+    p {
+        padding: 10px 20px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+    }
+
+    .p1 {
+        border: px solid red;
+        background-color: skyblue;
+    }
+
+    .p2 {
+        border: px solid black;
+        background-color: white;
+    }
+
+    .p3 {
+        border: px solid blue;
+        background-color: orangered;
+    }
+
+    .mt20 {
+        margin-top: 20px;
+    }
+
+</style>
+<div class="container mt20">
+    <p class="p1">Image Vidéo<br/><?= $p1 ?></p>
+    <p class="p2">Img Telechargement</p>
+    <p class="p3">Légende</p>
+</div>
