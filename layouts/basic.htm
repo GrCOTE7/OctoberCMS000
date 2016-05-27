@@ -13,13 +13,9 @@ function onStart(){
     <head>
         <meta charset="utf-8">
         <title>
-            {% if snl == 'pp100' %}
-                Local
-            {% else %}
-                Bases
-            {% endif %}
+            {% if (snl == 'p' or snl == 'pp100')  %}
+                L/            {% endif %}
                 000 | {{ this.page.title }}
-
         </title>
 
         <meta name="description" content="{{ this.page.meta_description }}">
@@ -98,6 +94,9 @@ function onStart(){
                             </li>
                             <li class="{% if this.page.id == 'videoss' %}active{% endif %}">
                                 <a href="{{ 'divers/videos'|page }}">Vidéos</a>
+                            </li>
+                            <li class="{% if this.page.id == 'pad' %}active{% endif %}">
+                                <a href="{{ 'tools/pad'|page }}">Pad</a>
                             </li>
                         </ul>
                         </ul>
