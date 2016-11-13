@@ -4,7 +4,6 @@ layout = "basic"
 is_hidden = 0
 ==
 <?php
-
 function onStart(){
 
     $this['maVar'] = 777;
@@ -13,22 +12,20 @@ function onStart(){
 ?>
 ==
 <div class="container">
-    <div class="row">
-        <div>
-            <h1>Bienvenue dans {{ this.theme.site_name }}!</h1>
-            <p><i>(Bases HTML5/CSS3 - SSh - BASH - Git (Ungit-GitHub-GitLab) - JavaScript - JQuery - PHP (POO) - Laravel - OctoberCMS - Googles Apps)</i></p>
-            <p>Page de base</p>
-            <a href="taf">TAF (Plugin demoTodo)</a>
-        </div>
-    </div>
+
+
+    <h1>Bienvenue dans {{ this.theme.site_name }}</h1>
+    <p><i>(Bases HTML5/CSS3 - SSh - BASH - Git (Ungit-GitHub-GitLab) - JavaScript - JQuery - PHP (POO) - Laravel -
+        OctoberCMS - Google 's Apps)</i></p>
+    <p class="noDeco">Page de base</p>
+    <a href="taf">TAF (Plugin demoTodo)</a>
+
     <hr/>
-    <div class="con">
-        <div class="row">
-            maVar = {{ maVar }}<br/>
-        </div>
+    <div class="container">
+        maVar = {{ maVar }}<br/>
     </div>
 </div>
 {% stopwatch "foo" %}
 {{ debug('maVar = ' ~ maVar) }}
 {% endstopwatch %}
-{#  <!--$this['theme_name'] = Config::get("cms.activeTheme",'');--> #}
+{#  $this['theme_name'] = Config::get("cms.activeTheme",''); #}

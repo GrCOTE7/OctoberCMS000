@@ -4,18 +4,13 @@ layout = "basic"
 is_hidden = 0
 
 [demoTodo]
-max = 3
+max = "{{ 3 }}"
 ==
 <div class="container">
     <h3>{{demoTodo.name}}</h3>
 
-    <h1>
+    <p>oOo{{ dump(this.property) }}oOo</p>
 
-
-        {{ this.property('max') }}
-
-
-    </h1>
 
     {#<p>Ici: {{demoTodo.nfLi(54789)}}</p>
     <p>{% for caractere, properties in demoTodo.getPropertyNames %}
@@ -42,12 +37,8 @@ max = 3
 </div>
 
 <div class="container">
-    <div class="row">
-        <div>
-            <h1>TAF (Usage plugins)</h1>
-            <p>Plugin 'demoTodo'</p>
-        </div>
-    </div>
+        <h1>TAF (Usage plugins)</h1>
+        <p>Plugin 'demoTodo'</p>
 </div>
 
 <div class="container">

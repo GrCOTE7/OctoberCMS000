@@ -1,0 +1,26 @@
+.padding10 {
+  color: red;
+  margin-top: 20px;
+  padding: 50px 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.padding20 {
+  color: blue;
+  margin-top: 70px;
+  padding: 50px 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.blocVideo img,
+.blocVideo iframe {
+  vertical-align: 50%;
+  margin: 4px 10px;
+}
+.noDeco {
+  color: red;
+  font-size: 520px;
+  font-weight: bold;
+}
