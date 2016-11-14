@@ -26,7 +26,7 @@ is_hidden = 0
     }
 
     .spaceli {
-        margin-right: 20px;  
+        margin-right: 20px;
     }
 </style>
 
@@ -41,17 +41,17 @@ is_hidden = 0
     <p><i>To Do GC7: Same for GitLab</i></p>
 
     <label v-for="branch in branches" class="spaceli">
-        
+
         <input type="radio"
                name="branch"
                :id="branch"
                :value="branch"
-               v-model="currentBranch"> 
+               v-model="currentBranch">
 
         <label :for="branch">
-             {% verbatim %} {{branch}} {% endverbatim %} 
+            {% verbatim %} {{branch}} {% endverbatim %}
         </label>
-        
+
     </label>
     <p>vuejs/vue@{% verbatim %}{{currentBranch}}{% endverbatim %}</p>
     <ul>
