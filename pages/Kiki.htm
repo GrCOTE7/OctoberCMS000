@@ -4,11 +4,39 @@ layout = "basic"
 description = "Fibo"
 is_hidden = 0
 ==
+<?php
+function onStart(){
+    
+    $this["users"]= Db::table('backend_users')->get();
+ /*
+ echo '<pre>';
+    print_r($this["users"]);
+    
+ echo '</pre>';  
+*/ 
+}
+?>
+==
 <div class="container pc97co">
 
     <h1>Hello Kiki</h1>
 
     <p>1105</p>
+    
+  <!--  <p>{{dump(users)}}<p> -->
+    
+    
+    {% for user in 1..7 %}
+    
+   <p class ="rouge" >
+   
+   {{user}}
+    
+    </p>
+    
+    {%endfor%}
+    
+    <p>&copy; 2016-{{now | date("Y")}} - CAJ Valenciennes<p>
 
 </div>
 <script language="javascript">

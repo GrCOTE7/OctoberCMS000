@@ -83,7 +83,5 @@ storage/
 .rocketeer/
 
 /themes/gc000/a/tsconfig.json
-Supprimerait .idea/
-Supprimerait a/tutos/.idea/
-Supprimerait a/tutos/bash/exo/.idea/
-Supprimerait a/tutos/bash/exo/miniatures/
+a/tutos/bash/exo/.idea/
+a/tutos/bash/exo/miniatures/
